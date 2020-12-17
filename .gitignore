@@ -8,3 +8,6 @@
 /spec/reports/
 /tmp/
 /log/
+/.vscode/
+/.DS_Store/
+
