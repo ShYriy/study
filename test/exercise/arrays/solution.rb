@@ -9,13 +9,16 @@ module Exercise
         while i < array_size
           if array[i] > maximum
             maximum = array[i]
-            i += 1
           end
+          i += 1
         end
         # меняем положительные числа на максимальное значение
-        for element in array do
-          if element.positive? element = maximum
+        j = 0
+        while j < array_size - 1
+          if (array[j]).positive?
+            array[j] = maximum
           end
+          j += 1
         end
       end
 
