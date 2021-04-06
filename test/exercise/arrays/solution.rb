@@ -2,24 +2,12 @@ module Exercise
   module Arrays
     class << self
       def replace(array)
-        array_size = array.size
-        # находим максимальное значение
-        maximum = array[0]
-        i = 1
-        while i < array_size
-          if array[i] > maximum
-            maximum = array[i]
-          end
-          i += 1
-        end
-        # меняем положительные числа на максимальное значение
-        j = 0
-        while j < array_size - 1
-          if (array[j]).positive?
-            array[j] = maximum
-          end
-          j += 1
-        end
+        max = find_max(array)
+        array.map { |elem| (elem < 0) ? elem : max }
+      end
+
+      def find_max(array)
+        array.reduce(array.first) { |acc, el| el > acc ? el : acc }
       end
 
       def search(array, query, first = 0, last = array.length - 1)
